@@ -1,21 +1,129 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RangingActivity" >
+    tools:context=".RangingActivity">
 
-    <EditText
-        android:id="@+id/rangingText"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:gravity="left|top"
-        android:inputType="textMultiLine" >
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </EditText>
-    
-</RelativeLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/init_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="初始化" />
+
+            <ToggleButton
+                android:id="@+id/wknn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="wknn"
+                android:textOff="开始"
+                android:textOn="暂停" />
+
+            <Switch
+                android:id="@+id/kalman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:gravity="center|end"
+                android:text="卡尔曼滤波"
+                android:textOff="OFF"
+                android:textOn="ON" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/kbmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/kb240">
+
+
+            <ImageView
+                android:id="@+id/loc_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/loc_icon" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textInfo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="位置信息"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="357dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/x"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="X"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/y"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Y"
+                android:inputType="numberDecimal" />
+
+            <Button
+                android:id="@+id/test_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="test_BT"
+                tools:layout_editor_absoluteX="246dp"
+                tools:layout_editor_absoluteY="334dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
